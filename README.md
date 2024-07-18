@@ -1,39 +1,27 @@
 # s3-upload
 
-This template should help get you started developing with Vue 3 in Vite.
+## How to use
 
-## Recommended IDE Setup
+### step1:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
 ```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### step2:
 
-```sh
-npm run build
-```
+<img width="1479" alt="截屏2024-07-18 16 10 05" src="https://github.com/user-attachments/assets/e115aef4-7f6c-4e42-a264-3fec54363179">
 
-### Lint with [ESLint](https://eslint.org/)
+enter your AWS config and Save
 
-```sh
-npm run lint
-```
+### step3:
+![image](https://github.com/user-attachments/assets/94e9737d-80c3-4b6c-8b7d-517fc6eabab3)
+
+1: enter prefix history
+2: enter prefix to find the target files, ex: files/abc/  or upload/ then get the files of upload/
+3: drop files in, click the button Upload. It will upload the files to s3 under the prefix file
+4: current files
+
+
+
+
