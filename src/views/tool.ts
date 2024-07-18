@@ -4,11 +4,6 @@ import { useConfig } from '@/composition/useConfig'
 
 const s3Config = useConfig()
 
-const distributions = [
-  'EZR1UZRJKWXEN',
-  'ED0CJB0TNUQQ2',
-]
-
 export async function updateS3Cache(paths: string[]) {
   const cloudfront = new CloudFrontClient({
     region: s3Config.value?.region, // 替换为你的S3桶所在的区域
@@ -17,6 +12,7 @@ export async function updateS3Cache(paths: string[]) {
       secretAccessKey: s3Config.value?.secretAccessKey, // 替换为你的秘密访问密钥
     },
   })
+  const distributions = s3Config.value.distributions.split(',').map(item => item.trim())
   distributions.forEach(id => invalidationFunc(id))
   function invalidationFunc(distributionId: string) {
     const params = {

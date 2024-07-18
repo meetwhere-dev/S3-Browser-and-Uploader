@@ -12,6 +12,7 @@ const _s3Config = reactive({
   accessKeyId: s3Config.value.accessKeyId, // 替换为你的访问密钥ID
   secretAccessKey: s3Config.value.secretAccessKey, // 替换为你的秘密访问密钥
   bucket: s3Config.value.bucket, // 替换为你的S3桶名称
+  distributions: s3Config.value.distributions, // 替换为你的CDN分发配置
 })
 
 const router = useRouter()
@@ -31,6 +32,7 @@ function save() {
     <Input v-model="_s3Config.accessKeyId" placeholder="accessKeyId" class="w-full" />
     <Input v-model="_s3Config.secretAccessKey" placeholder="secretAccessKey" class="w-full" />
     <Input v-model="_s3Config.bucket" placeholder="bucket" class="w-full" />
+    <Input v-model="_s3Config.distributions" placeholder="distributions split by ," class="w-full" />
 
     <Button @click="save">
       Save

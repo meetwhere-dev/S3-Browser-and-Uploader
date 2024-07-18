@@ -23,7 +23,11 @@ const router = createRouter({
 
 router.beforeEach(async (to) => {
   const s3Config = useConfig()
-  const isAuthenticated = s3Config.value.region && s3Config.value.accessKeyId && s3Config.value.secretAccessKey
+  const isAuthenticated = s3Config.value.region
+    && s3Config.value.accessKeyId
+    && s3Config.value.secretAccessKey
+    && s3Config.value.bucket
+    && s3Config.value.distributions
   if (
     // 检查用户是否已登录
     !isAuthenticated && to.name !== 'setting'
